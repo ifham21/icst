@@ -177,8 +177,8 @@ const PdfFormFiller = () => {
       
       case "nic":
         if (!value) newErrors.nic = "NIC is required";
-        else if (!/^[0-9]{9}[vVxX]?$/.test(value)) 
-          newErrors.nic = "Invalid NIC format (e.g., 123456789V)";
+        else if (!/^([0-9]{9}[vVxX]|[0-9]{12})$/.test(value)) 
+          newErrors.nic = "Invalid NIC format (e.g., 123456789V or 199912345678)";
         else delete newErrors.nic;
         break;
       
@@ -338,8 +338,8 @@ const PdfFormFiller = () => {
       newErrors.email = "Invalid email format";
     }
     
-    if (formData.nic && !/^[0-9]{9}[vVxX]?$/.test(formData.nic)) {
-      newErrors.nic = "Invalid NIC format (e.g., 123456789V)";
+    if (formData.nic && !/^([0-9]{9}[vVxX]|[0-9]{12})$/.test(formData.nic)) {
+      newErrors.nic = "Invalid NIC format (e.g., 123456789V or 199912345678)";
     }
     
     if (formData.generalPaper && (!/^\d+$/.test(formData.generalPaper) || parseInt(formData.generalPaper) > 100)) {
