@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { PDFDocument, rgb, StandardFonts } from "pdf-lib";
-import SignatureCanvas from 'react-signature-canvas'; // Added signature library
+import SignatureCanvas from 'react-signature-canvas';
 import logo from "../assets/icst-logo.png";
 import applicationPdf from "../assets/ApplicationV23.pdf";
 
